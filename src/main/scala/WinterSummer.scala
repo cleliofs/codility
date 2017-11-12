@@ -43,18 +43,20 @@ object WinterSummer {
     def solution(t: Array[Int]): Int = {
 
       @tailrec
-      def findPartition(a: List[Int], maxWinterTemp: Int, res: Int): Int = {
+      def findPartition(a: List[Int], maxWinterTemp: Int, index: Int, res: Int): Int = {
         a match {
-          case _ :: Nil => res
+          case x :: Nil =>
+            if (x > maxWinterTemp) index
+            else res - 1
 
           case x :: xs =>
-            if (maxWinterTemp <= x) findPartition(xs, x, res+1)
-            else findPartition(xs, maxWinterTemp, res+1)
+            if (x >= maxWinterTemp) findPartition(xs, x, index+1, index+1)
+            else findPartition(xs, maxWinterTemp, index+1, res)
 
         }
       }
 
-      findPartition(t.tail.toList, t.head, 1)
+      findPartition(t.tail.toList, t.head, 1, 1)
     }
   }
 

@@ -11,21 +11,21 @@ class WinterSummerTest extends FlatSpec with Matchers {
 //
 //    a = Array(-5, -5, -5, -42, 6, 12)
 //    WinterSummer.Solution.solution(a) shouldBe 4 // [-5, -5, -5, -42] and [6, 12]
-//
-//    a = Array(5, -2, 3, 4, 6)
-//    WinterSummer.Solution.solution(a) shouldBe 4 // [5, -2, 3, 4] and [6]
-//
-//    a = Array(5, 6, 8, 10, 6)
-//    WinterSummer.Solution.solution(a) shouldBe 1 // [5] and [6, 8, 10, 6]
-//
-//    a = Array(1, 5, 6, 8, 10, 6)
-//    WinterSummer.Solution.solution(a) shouldBe 1 // [1] and [5, 6, 8, 10, 6]
-//
-//    a = Array(4, 6)
-//    WinterSummer.Solution.solution(a) shouldBe 1 // [4] and [6]
 
-    a = Array(4, 6, 2, 7, 9, 3, 18, 11, 15, 14)
-    WinterSummer.Solution.solution(a) shouldBe 6 // [4, 6, 2, 7, 9, 3] and [18, 11, 15, 14]
+    a = Array(5, -2, 3, 4, 6)
+//    WinterSummer.Solution.solution(a) shouldBe 4 // [5, -2, 3, 4] and [6]
+
+    a = Array(5, 6, 8, 10, 6)
+    WinterSummer.Solution.solution(a) shouldBe 1 // [5] and [6, 8, 10, 6]
+
+    a = Array(1, 5, 6, 8, 10, 6)
+    WinterSummer.Solution.solution(a) shouldBe 1 // [1] and [5, 6, 8, 10, 6]
+
+    a = Array(4, 6)
+    WinterSummer.Solution.solution(a) shouldBe 1 // [4] and [6]
+
+    a = Array(4, 6, 2, 7, 1, 9, 3, 18, 11, 15, 14)
+    WinterSummer.Solution.solution(a) shouldBe 7 // [4, 6, 2, 7, 1, 9, 3] and [18, 11, 15, 14]
   }
 
 }
