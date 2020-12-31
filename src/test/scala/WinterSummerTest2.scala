@@ -1,8 +1,6 @@
-
-import com.hsbc.vadm.enp.crf.cdc.account.WinterSummer
 import org.scalatest.{FlatSpec, Matchers}
 
-class WinterSummerTest extends FlatSpec with Matchers {
+class WinterSummerTest2 extends FlatSpec with Matchers {
 
   "Solution" should "pass" in {
     var a = Array(5, -2, 3, 8, 6)
