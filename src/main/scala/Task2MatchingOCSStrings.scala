@@ -1,10 +1,13 @@
-object Solution2 {
+object Task2MatchingOCSStrings {
 
   def solution(s: String, t: String): Boolean = {
     // write your code in Scala 2.12
 
     def allMatchingForOCRStrings(s: String, t: String) = {
-      def areOCRStringsOfSameLength(expandedOcrS: String, expandedOcrT: String) = expandedOCRForS.length == expandedOCRForT.length
+      lazy val expandedOCRForS = expandString(s)
+      lazy val expandedOCRForT = expandString(t)
+
+      def areOCRStringsOfSameLength = expandedOCRForS.length == expandedOCRForT.length
 
       def expandString(s: String) = {
         def fillWithQuestionMarks(n: Int): String = (1 to n).map(_ => '$').mkString
@@ -12,10 +15,7 @@ object Solution2 {
         s.map(c => if (c.isDigit) fillWithQuestionMarks(c.asDigit) else c.toString).mkString
       }
 
-      lazy val expandedOCRForS = expandString(s)
-      lazy val expandedOCRForT = expandString(t)
-
-      areOCRStringsOfSameLength(expandedOCRForS, expandedOCRForT) && expandedOCRForS.zip(expandedOCRForT).forall { t =>
+      areOCRStringsOfSameLength && expandedOCRForS.zip(expandedOCRForT).forall { t =>
         val (c1, c2) = t
         c1 == c2 || Seq(c1, c2).contains('$')
       }
